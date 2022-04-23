@@ -1,4 +1,14 @@
 const getAll = (req, res) => {
+    if(req.query.user) {
+        const response = {
+            status: "success",
+            data: {
+                "user": req.query.user,
+                "message": `GETTING message with username ${req.query.user}`
+            }
+        };
+        res.json(response);
+    };
     const response = {
         status: "success",
         message: "GETTING messages",
@@ -23,12 +33,12 @@ const getId = (req, res) => {
 
     const response = {
         status: "success",
-        message : `GETTING message with id ${id}`,
-        data : {
-            messages : [
+        message: `GETTING message with id ${id}`,
+        data: {
+            messages: [
                 {
-                    "user" : "Jane",
-                    "message" : "Hey there"
+                    "user": "Jane",
+                    "message": "Hey there"
                 }
             ]
         }
@@ -38,13 +48,13 @@ const getId = (req, res) => {
 
 const create = (req, res) => {
     const response = {
-        status : "success",
-        message : "POSTING a new message for user Jane",
-        data : {
-            messages : [
+        status: "success",
+        message: "POSTING a new message for user Jane",
+        data: {
+            messages: [
                 {
-                    "user" : "Jane",
-                    "message" : "Hello person"
+                    "user": "Jane",
+                    "message": "Hello person"
                 }
             ]
         }
@@ -57,12 +67,12 @@ const update = (req, res) => {
 
     const response = {
         status: "success",
-        message : `UPDATING a message with id ${id}`,
-        data : {
-            messages : [
+        message: `UPDATING a message with id ${id}`,
+        data: {
+            messages: [
                 {
-                    "user" : "Jane",
-                    "message" : "I love it here"
+                    "user": "Jane",
+                    "message": "I love it here"
                 }
             ]
         }
@@ -75,11 +85,11 @@ const deleteMessage = (req, res) => {
 
     const response = {
         status: "success",
-        message : `DELETING a message with id ${id}`,
-        data : {
-            messages : [
+        message: `DELETING a message with id ${id}`,
+        data: {
+            messages: [
                 {
-                    "message" : "The message was removed"
+                    "message": "The message was removed"
                 }
             ]
         }
