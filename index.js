@@ -11,7 +11,7 @@ app.use("/api/v1/messages", messagesRouter);
 
 
 app.get('/', (req, res) => {
-  res.send("hello");
+  res.render("index", {title: "Hello", message: "person"});
 });
 
 app.listen(port, () => {
